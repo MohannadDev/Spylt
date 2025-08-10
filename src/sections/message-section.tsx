@@ -48,19 +48,19 @@ const MessageSection = () => {
     //     scrub: true,
     //   },
     // });
-      const revealTl = gsap.timeline({
+    const revealTl = gsap.timeline({
       delay: 0.5,
       scrollTrigger: {
-        trigger: ".msg-text-scroll",
-        start: "top 60%",
-        end: "bottom 60%",
-        scrub: true
+        trigger: '.msg-text-scroll',
+        start: 'top 60%',
+        end: 'bottom 60%',
+        scrub: true,
       },
     });
-    revealTl.to(".msg-text-scroll", {
+    revealTl.to('.msg-text-scroll', {
       duration: 0.5,
-      clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
-      ease: "circ.inOut",
+      clipPath: 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)',
+      ease: 'circ.inOut',
     });
     const pargTL = gsap.timeline({
       scrollTrigger: {
@@ -73,7 +73,7 @@ const MessageSection = () => {
       yPercent: 300,
       stagger: 0.01,
       ease: 'power1.inOut',
-      scrub: true
+      scrub: true,
     });
   });
   return (

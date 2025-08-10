@@ -22,44 +22,47 @@ export default function Magnetic({
 }: MagneticProps) {
   const ref = useRef<HTMLDivElement | null>(null);
 
-  useGSAP(() => {
-    const el = ref.current;
-    if (!el) return;
-    console.log(2)
-    // Magnetic quickTo movement
-    const xTo = gsap.quickTo(el, 'x', { duration, ease });
-    const yTo = gsap.quickTo(el, 'y', { duration, ease });
+  useGSAP(
+    () => {
+      const el = ref.current;
+      if (!el) return;
+      console.log(2);
+      // Magnetic quickTo movement
+      const xTo = gsap.quickTo(el, 'x', { duration, ease });
+      const yTo = gsap.quickTo(el, 'y', { duration, ease });
 
-    // Mouse movement handling
-    const mouseMove = (e: MouseEvent) => {
-      const { clientX, clientY } = e;
-      const { width, height, left, top } = el.getBoundingClientRect();
-      const x = clientX - (left + width / 2);
-      const y = clientY - (top + height / 2);
-      xTo(x);
-      yTo(y);
-    };
+      // Mouse movement handling
+      const mouseMove = (e: MouseEvent) => {
+        const { clientX, clientY } = e;
+        const { width, height, left, top } = el.getBoundingClientRect();
+        const x = clientX - (left + width / 2);
+        const y = clientY - (top + height / 2);
+        xTo(x);
+        yTo(y);
+      };
 
-    const mouseEnter = () => {
-      if (hoverAnimation) gsap.to(el, { ...hoverAnimation });
-    };
+      const mouseEnter = () => {
+        if (hoverAnimation) gsap.to(el, { ...hoverAnimation });
+      };
 
-    const mouseLeave = () => {
-      xTo(0);
-      yTo(0);
-      if (leaveAnimation) gsap.to(el, { ...leaveAnimation });
-    };
+      const mouseLeave = () => {
+        xTo(0);
+        yTo(0);
+        if (leaveAnimation) gsap.to(el, { ...leaveAnimation });
+      };
 
-    el.addEventListener('mousemove', mouseMove);
-    el.addEventListener('mouseenter', mouseEnter);
-    el.addEventListener('mouseleave', mouseLeave);
+      el.addEventListener('mousemove', mouseMove);
+      el.addEventListener('mouseenter', mouseEnter);
+      el.addEventListener('mouseleave', mouseLeave);
 
-    return () => {
-      el.removeEventListener('mousemove', mouseMove);
-      el.removeEventListener('mouseenter', mouseEnter);
-      el.removeEventListener('mouseleave', mouseLeave);
-    };
-  }, { scope: ref, dependencies: [duration, ease, hoverAnimation, leaveAnimation] });
+      return () => {
+        el.removeEventListener('mousemove', mouseMove);
+        el.removeEventListener('mouseenter', mouseEnter);
+        el.removeEventListener('mouseleave', mouseLeave);
+      };
+    },
+    { scope: ref, dependencies: [duration, ease, hoverAnimation, leaveAnimation] }
+  );
 
   return (
     <div ref={ref} style={{ display: 'inline-block' }} className={className}>

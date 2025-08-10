@@ -9,51 +9,54 @@ import React, { useRef } from 'react';
 const HeroSection = () => {
   const heroRef = useRef<HTMLDivElement>(null);
 
-  useGSAP(() => {
-    gsap.registerPlugin(ScrollTrigger);
+  useGSAP(
+    () => {
+      gsap.registerPlugin(ScrollTrigger);
 
-    const titleSplit = SplitText.create('.hero-title', { type: 'chars' });
-    const tl = gsap.timeline({ delay: 1 });
+      const titleSplit = SplitText.create('.hero-title', { type: 'chars' });
+      const tl = gsap.timeline({ delay: 1 });
 
-    tl.to('.hero-content', {
-      opacity: 1,
-      y: 0,
-      ease: 'power1.inOut',
-    })
-      .to(
-        '.hero-text-scroll',
-        {
-          duration: 1,
-          clipPath: 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)',
-          ease: 'circ.out',
+      tl.to('.hero-content', {
+        opacity: 1,
+        y: 0,
+        ease: 'power1.inOut',
+      })
+        .to(
+          '.hero-text-scroll',
+          {
+            duration: 1,
+            clipPath: 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)',
+            ease: 'circ.out',
+          },
+          '-=0.5'
+        )
+        .from(
+          titleSplit.chars,
+          {
+            yPercent: 200,
+            stagger: 0.02,
+            ease: 'power2.out',
+          },
+          '-=0.5'
+        );
+
+      const heroTl = gsap.timeline({
+        scrollTrigger: {
+          trigger: '.hero-container',
+          start: 'top top',
+          end: 'bottom top',
+          scrub: true,
         },
-        '-=0.5'
-      )
-      .from(
-        titleSplit.chars,
-        {
-          yPercent: 200,
-          stagger: 0.02,
-          ease: 'power2.out',
-        },
-        '-=0.5'
-      );
-
-    const heroTl = gsap.timeline({
-      scrollTrigger: {
-        trigger: '.hero-container',
-        start: 'top top',
-        end: 'bottom top',
-        scrub: true,
-      },
-    });
-    heroTl.to(".hero-container", {
+      });
+      heroTl.to('.hero-container', {
         rotate: 7,
         scale: 0.9,
         yPercent: 20,
-        ease: "power1.inOut"
-    })
-  }, { scope: heroRef });
+        ease: 'power1.inOut',
+      });
+    },
+    { scope: heroRef }
+  );
 
   return (
     <section className="bg-main-bg" ref={heroRef}>

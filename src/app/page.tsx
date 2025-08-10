@@ -7,7 +7,7 @@ export default function Home() {
       <HeroSection />
       <MessageSection />
 
-      <div className='h-dvh'></div>
+      <div className="h-dvh"></div>
     </>
   );
 }
