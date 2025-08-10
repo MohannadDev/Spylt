@@ -3,7 +3,7 @@
 
 @font-face {
   font-family: 'ProximaNova, sans-serif';
-  src: url('../assets/fonts/ProximaNova-Regular.otf');
+  src: url('/assets/fonts/ProximaNova-Regular.otf');
 }
 @theme {
   --color-black: #222123;
