@@ -152,6 +152,16 @@ body::-webkit-scrollbar {
         h1 {
           @apply absolute md:bottom-10 md:left-10 bottom-5 left-5 text-milk md:text-6xl text-3xl font-semibold uppercase tracking-tighter;
         }
+        .flavor-container {
+          @apply relative z-30 lg:w-[50vw] w-96 lg:h-[70vh] md:w-[90vw] md:h-[50vh] h-80 flex-none rotate-0;
+        }
+        .flavor-container:nth-child(odd) {
+          @apply md:rotate-[8deg];
+        }
+
+        .flavor-container:nth-child(even) {
+          @apply md:rotate-[-8deg];
+        }
       }
     }
   }
@@ -160,7 +170,7 @@ body::-webkit-scrollbar {
     @apply min-h-dvh 2xl:h-[120dvh] overflow-hidden relative;
 
     .big-img {
-      @apply w-full absolute 2xl:h-full md:h-2/3 h-1/2 left-0 bottom-0 object-bottom 2xl:object-contain object-cover;
+      @apply w-full absolute lg:h-full  md:h-2/3 h-1/2 left-0 bottom-0 object-bottom 2xl:object-contain object-cover;
     }
 
     .nutrition-title {
@@ -232,7 +242,7 @@ body::-webkit-scrollbar {
     @apply bg-milk relative w-full h-[120dvh];
 
     .pin-box {
-      @apply flex items-center justify-center w-full ps-52 absolute 2xl:bottom-32 bottom-[50vh];
+      @apply flex items-center justify-center w-full ps-52 absolute 2xl:bottom-32 bottom-[50vh] overflow-hidden ;
 
       .vd-card {
         @apply md:w-96 w-80 flex-none md:rounded-[2vw] rounded-3xl -ms-44 overflow-hidden 2xl:relative absolute border-[.5vw] border-milk;

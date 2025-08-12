@@ -1,18 +1,22 @@
 'use client';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
-import ScrollTrigger from 'gsap/ScrollTrigger';
 import { SplitText } from 'gsap/all';
-import Image from 'next/image';
 import React, { useRef } from 'react';
+import { useMediaQuery } from 'react-responsive';
 
 const HeroSection = () => {
   const heroRef = useRef<HTMLDivElement>(null);
+  const isMobile = useMediaQuery({
+    query: '(max-width: 768px)',
+  });
+
+  const isTablet = useMediaQuery({
+    query: '(max-width: 1024px)',
+  });
 
   useGSAP(
     () => {
-      gsap.registerPlugin(ScrollTrigger);
-
       const titleSplit = SplitText.create('.hero-title', { type: 'chars' });
       const tl = gsap.timeline({ delay: 1 });
 
@@ -61,23 +65,25 @@ const HeroSection = () => {
   return (
     <section className="bg-main-bg" ref={heroRef}>
       <div className="hero-container">
-        {/* {isTablet ? (
+        {isTablet ? (
           <>
-            {isMobile && <Image src="/images/hero-bg.png" className="absolute bottom-40 size-full object-cover" />}
-            <Image
-              src="/images/hero-img.png"
+            {isMobile && (
+              <img src="/assets/images/hero-bg.png" className="absolute bottom-40 size-full object-cover" />
+            )}
+            <img
+              src="/assets/images/hero-img.png"
               className="absolute bottom-0 left-1/2 -translate-x-1/2 object-auto"
             />
           </>
         ) : (
           <video
-            src="/videos/hero-bg.mp4"
+            src="/assets/videos/hero-bg.mp4"
             autoPlay
             muted
             playsInline
             className="absolute inset-0 w-full h-full object-cover"
           />
-        )} */}
+        )}
         <div className="hero-content opacity-0">
           <div className="overflow-hidden">
             <h1 className="hero-title">Freaking Delicious</h1>

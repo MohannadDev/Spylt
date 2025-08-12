@@ -1,7 +1,7 @@
 'use client';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
-import React, { useRef, useEffect, ReactNode } from 'react';
+import React, { useRef, ReactNode } from 'react';
 
 type MagneticProps = {
   children: ReactNode;
@@ -26,12 +26,9 @@ export default function Magnetic({
     () => {
       const el = ref.current;
       if (!el) return;
-      console.log(2);
-      // Magnetic quickTo movement
       const xTo = gsap.quickTo(el, 'x', { duration, ease });
       const yTo = gsap.quickTo(el, 'y', { duration, ease });
 
-      // Mouse movement handling
       const mouseMove = (e: MouseEvent) => {
         const { clientX, clientY } = e;
         const { width, height, left, top } = el.getBoundingClientRect();
