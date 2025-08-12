@@ -52,14 +52,14 @@ const MessageSection = () => {
     });
     const paragraphTl = gsap.timeline({
       scrollTrigger: {
-        trigger: ".message-content p",
-        start: "top bottom"
+        trigger: '.message-content p',
+        start: 'top bottom',
       },
     });
     paragraphTl.from(pargSplit.words, {
       yPercent: 300,
       rotate: 3,
-      ease: "power1.inOut",
+      ease: 'power1.inOut',
       duration: 1,
       stagger: 0.01,
     });

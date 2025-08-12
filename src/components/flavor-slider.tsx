@@ -67,7 +67,6 @@ const FlavorSlider = () => {
         {flavorlists.map(flavor => {
           return (
             <div key={flavor.name} className="flavor-container">
-         
               {/* todo: there should be an effect with the elems */}
               <img src={`/assets/images/${flavor.color}-bg.svg`} alt="" className="absolute bottom-0" />
 

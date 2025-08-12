@@ -1,4 +1,4 @@
-"use client";
+'use client';
 import gsap from 'gsap';
 import { ScrollSmoother, ScrollTrigger } from 'gsap/all';
 import { useGSAP } from '@gsap/react';
@@ -13,5 +13,5 @@ export default function GSAPProvider() {
     });
   }, []);
 
-  return null; 
+  return null;
 }

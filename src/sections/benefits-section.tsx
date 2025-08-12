@@ -7,24 +7,24 @@ import React from 'react';
 
 const BenefitsSection = () => {
   useGSAP(() => {
- const revealTl = gsap.timeline({
-  delay: 1,
-  scrollTrigger: {
-    trigger: ".benefit-section",
-    start: "top 60%",
-    end: "top top",
-    scrub: 1.5,
-  },
-});
+    const revealTl = gsap.timeline({
+      delay: 1,
+      scrollTrigger: {
+        trigger: '.benefit-section',
+        start: 'top 60%',
+        end: 'top top',
+        scrub: 1.5,
+      },
+    });
 
-(gsap.utils.toArray(".benefit-section .general-title > div") as HTMLElement[]).forEach(title => {
-  revealTl.to(title, {
-    duration: 1,
-    opacity: 1,
-    clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
-    ease: "circ.out",
-  });
-});
+    (gsap.utils.toArray('.benefit-section .general-title > div') as HTMLElement[]).forEach(title => {
+      revealTl.to(title, {
+        duration: 1,
+        opacity: 1,
+        clipPath: 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)',
+        ease: 'circ.out',
+      });
+    });
   });
 
   return (
@@ -73,7 +73,9 @@ const BenefitsSection = () => {
         </div>
       </div>
 
-      <div className="relative overlay-box"><VideoPinSection /></div>
+      <div className="relative overlay-box">
+        <VideoPinSection />
+      </div>
     </section>
   );
 };

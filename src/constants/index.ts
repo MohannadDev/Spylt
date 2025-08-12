@@ -1,27 +1,27 @@
 const flavorlists = [
   {
     name: 'Chocolate Milk',
-    color: 'brown'
+    color: 'brown',
   },
   {
     name: 'Stawberry Milk',
-    color: 'red'
+    color: 'red',
   },
   {
     name: 'Cookies & Cream',
-    color: 'blue'
+    color: 'blue',
   },
   {
     name: 'Peanut Butter Chocolate',
-    color: 'orange'
+    color: 'orange',
   },
   {
     name: 'Vanilla Milkshake',
-    color: 'white'
+    color: 'white',
   },
   {
     name: 'Max Chocolate Milk',
-    color: 'black'
+    color: 'black',
   },
 ];
 

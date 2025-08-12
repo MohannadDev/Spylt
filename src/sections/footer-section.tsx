@@ -16,7 +16,7 @@ const FooterSection = () => {
         </div>
 
         {isMobile ? (
-          <img src="/assets/images/footer-drink.png" className="absolute top-0 object-contain" alt='drink photo'/>
+          <img src="/assets/images/footer-drink.png" className="absolute top-0 object-contain" alt="drink photo" />
         ) : (
           <video
             src="/assets/videos/splash.mp4"
