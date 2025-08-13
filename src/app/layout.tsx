@@ -2,6 +2,8 @@ import type { Metadata } from 'next';
 import './globals.css';
 import Navbar from '@/components/navbar';
 import GSAPProvider from '../components/GSAPProvider';
+import Loading from './loading';
+import { Suspense } from 'react';
 
 export const metadata: Metadata = {
   title: 'Spylt remake',
@@ -12,13 +14,15 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="en">
       <body>
-        <GSAPProvider />
-        <Navbar />
-        <main>
-          <div id="smooth-wrapper">
-            <div id="smooth-content">{children} </div>
+        <div id="smooth-wrapper">
+          <div id="smooth-content">
+            <Suspense fallback={<Loading />}>
+              <GSAPProvider />
+              <Navbar />
+              <main>{children}</main>
+            </Suspense>
           </div>
-        </main>
+        </div>
       </body>
     </html>
   );

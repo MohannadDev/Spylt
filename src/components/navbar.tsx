@@ -12,7 +12,7 @@ const Navbar = () => {
         hoverAnimation={{ scale: 1, opacity: 0.8, filter: 'brightness(0.9)', duration: 0.3 }}
         leaveAnimation={{ scale: 0.9, opacity: 1, filter: 'brightness(1)', duration: 0.3 }}>
         <Link href="/">
-          <Image src="/assets/images/nav-logo.svg" alt="logo" width={16} height={16} className="w-16 md:w-20" />
+          <Image src="/assets/images/nav-logo.svg" alt="logo" width={64} height={64} className="w-16 md:w-20" />
         </Link>
       </Magnetic>
     </nav>

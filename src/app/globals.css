@@ -225,7 +225,7 @@ body::-webkit-scrollbar {
       @apply md:h-[110vh] h-dvh overflow-hidden md:!-translate-y-[15%] md:mt-0 mt-20;
 
       video {
-        @apply size-full absolute inset-0 object-cover;
+        @apply size-full  inset-0 object-cover;
       }
 
       .play-btn {
@@ -242,7 +242,7 @@ body::-webkit-scrollbar {
     @apply bg-milk relative w-full h-[120dvh];
 
     .pin-box {
-      @apply flex items-center justify-center w-full ps-52 absolute 2xl:bottom-32 bottom-[50vh] overflow-hidden;
+      @apply flex items-center justify-center w-full ps-52 absolute 2xl:bottom-32 bottom-[50vh];
 
       .vd-card {
         @apply md:w-96 w-80 flex-none md:rounded-[2vw] rounded-3xl -ms-44 overflow-hidden 2xl:relative absolute border-[.5vw] border-milk;
@@ -253,7 +253,25 @@ body::-webkit-scrollbar {
       @apply uppercase text-[20.5vw] leading-[105%] tracking-[-.4vw] ml-[2vw] font-bold;
     }
   }
-
+  .cta-section {
+    @apply bg-[url('/assets/images/cta-bg.svg')] bg-cover bg-center relative
+     z-50 overflow-hidden py-8 md:py-16;
+    .cta-content {
+      @apply relative container z-10 w-full h-full flex flex-col 2xl:justify-center items-center translate-y-10 2xl:py-0 md:py-32 py-24 md:translate-x-[-15%] lg:translate-x-[-20%] xl:translate-x-[-25%];
+      .cta-text-scroll {
+        @apply rotate-[-3deg] mb-8 border-[.5vw] border-light-brown  bg-light-brown text-dark-brown;
+        h2 {
+          @apply uppercase 2xl:text-[8.5rem] md:text-[6.5rem] text-[3.3rem] font-bold text-[#fce1cd] leading-[9vw] tracking-[-.35vw] 2xl:px-[1.2vw] px-3 2xl:pb-[1vw] pb-5 2xl:py-0 py-3;
+        }
+      }
+      p {
+        @apply text-milk font-paragraph;
+      }
+      .cta-button {
+        @apply md:mt-16 mt-10 text-milk bg-black uppercase font-bold text-sm rounded-full md:p-5 p-3 md:px-8 px-5;
+      }
+    }
+  }
   .footer-section {
     @apply 2xl:min-h-dvh overflow-hidden relative bg-[#222123];
 

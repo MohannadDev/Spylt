@@ -9,7 +9,7 @@ import { useMediaQuery } from 'react-responsive';
 const FlavorSlider = () => {
   const conatienrRef = useRef<HTMLDivElement>(null);
   const isTablet = useMediaQuery({
-    query: '(max-width: 768px)',
+    query: '(max-width: 1024px)',
   });
   useGSAP(() => {
     if (!conatienrRef.current) return;
@@ -19,13 +19,13 @@ const FlavorSlider = () => {
         scrollTrigger: {
           trigger: '.flavor-section',
           start: '2% top',
-          end: `+=${scrollAmount + scrollAmount * 0.2}px`,
+          end: `+=${scrollAmount + scrollAmount * 0.25}px`,
           scrub: true,
           pin: true,
         },
       });
       tl.to('.flavor-section', {
-        x: `-${scrollAmount + scrollAmount * 0.2}px`,
+        x: `-${scrollAmount + scrollAmount * 0.25}px`,
         ease: 'power1.inOut',
       });
     }
@@ -67,7 +67,6 @@ const FlavorSlider = () => {
         {flavorlists.map(flavor => {
           return (
             <div key={flavor.name} className="flavor-container">
-              {/* todo: there should be an effect with the elems */}
               <img src={`/assets/images/${flavor.color}-bg.svg`} alt="" className="absolute bottom-0" />
 
               <img src={`/assets/images/${flavor.color}-drink.webp`} alt="" className="drinks" />

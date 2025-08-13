@@ -1,13 +1,21 @@
+'use client';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
-import React from 'react';
+import React, { useState } from 'react';
 import { useMediaQuery } from 'react-responsive';
+import VideoPanel from './VideoPanel';
 
 const VideoPinSection = () => {
   const isMobiel = useMediaQuery({
     query: '(max-width: 768px)',
   });
+  // const [isVideoPanelOpen, setIsVideoPanelOpen] = useState(false);
+  const [selectedVideo, setSelectedVideo] = useState('');
 
+  const handleOpenVideo = (videoSrc: string) => {
+    setSelectedVideo(videoSrc);
+    // setIsVideoPanelOpen(true);
+  };
   useGSAP(() => {
     if (!isMobiel) {
       const tl = gsap.timeline({
@@ -36,11 +44,13 @@ const VideoPinSection = () => {
 
         <div className="abs-center md:scale-100 scale-200">
           <img src="/assets/images/circle-text.svg" alt="" className="spin-circle" />
-          <div className="play-btn">
+          <button className="play-btn" onClick={() => setSelectedVideo('/assets/videos/pin-video.mp4')}>
             <img src="/assets/images/play.svg" alt="" className="size-[3vw] ml-[.5vw]" />
-          </div>
+          </button>
         </div>
       </div>
+      {/* <VideoPanel isOpen={isVideoPanelOpen} onClose={() => setIsVideoPanelOpen(false)} videoSrc={selectedVideo} /> */}
+      <VideoPanel isOpen={!!selectedVideo} onClose={() => setSelectedVideo('')} videoSrc={selectedVideo || ''} />
     </section>
   );
 };

@@ -103,8 +103,8 @@ const HeroSection = () => {
             smooth chug.
           </h2>
 
-          <div className="hero-button">
-            <p>Chug a SPYLT</p>
+          <div className="cta-button">
+            <p>Contact the dev</p>
           </div>
         </div>
       </div>

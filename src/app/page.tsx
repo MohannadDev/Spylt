@@ -1,4 +1,5 @@
 import BenefitsSection from '@/sections/benefits-section';
+import CtaSection from '@/sections/cta-section';
 import FlavorsSection from '@/sections/flavors-section';
 import FooterSection from '@/sections/footer-section';
 import HeroSection from '@/sections/hero-section';
@@ -15,6 +16,7 @@ export default function Home() {
       <NutritionSection />
       <BenefitsSection />
       <TestimonialSection />
+      <CtaSection />
       <FooterSection />
     </>
   );

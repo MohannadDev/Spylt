@@ -8,8 +8,6 @@ const FooterSection = () => {
 
   return (
     <section className="footer-section">
-      <img src="/assets/images/footer-dip.png" alt="" className="w-full object-cover -translate-y-1" />
-
       <div className="2xl:h-[110dvh] relative md:pt-[20vh] pt-[10vh]">
         <div className="overflow-hidden z-10">
           <h1 className="general-title text-center text-milk py-5">#CHUGRESPONSIBLY</h1>
@@ -58,17 +56,6 @@ const FooterSection = () => {
 
           <div className="md:max-w-lg">
             <p>Get Exclusive Early Access and Stay Informed About Product Updates, Events, and More!</p>
-            <div className="flex justify-between items-center border-b border-[#D9D9D9] py-5 md:mt-10">
-              {/* The input field and arrow icon for newsletter signup. */}{' '}
-              {/* A
-          border at the bottom for a clean, modern look. */}
-              <input
-                type="email"
-                placeholder="Enter your email"
-                className="w-full placeholder:font-sans placeholder:text-[#999999] focus:border-0 focus:text-white"
-              />
-              <img src="/assets/images/arrow.svg" alt="arrow" />
-            </div>
           </div>
         </div>
 

@@ -2,9 +2,12 @@
 import { cards } from '@/constants';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
-import React from 'react';
+import React, { useState } from 'react';
+import VideoPanel from '@/components/VideoPanel';
 
 const TestimonialSection = () => {
+  const [selectedVideo, setSelectedVideo] = useState<string | null>(null);
+
   useGSAP(() => {
     gsap.set('.testimonials-section', {
       marginTop: '-140vh',
@@ -14,10 +17,12 @@ const TestimonialSection = () => {
       scrollTrigger: {
         trigger: '.testimonials-section',
         start: 'top bottom',
-        end: '200% top',
-        scrub: true,
+        end: '150% top',
+        scrub: 1.5,
+        // markers: true
       },
     });
+    // todo: ddd
     // (gsap.utils.toArray('.testimonials-section > div:first-child > h1') as HTMLElement[]).forEach((title, index) => {
     //   tl.to(
     //     title,
@@ -50,7 +55,7 @@ const TestimonialSection = () => {
       scrollTrigger: {
         trigger: '.testimonials-section',
         start: '10% top',
-        end: '200% top',
+        end: '150% top',
         scrub: 1.5,
         pin: true,
       },
@@ -74,34 +79,42 @@ const TestimonialSection = () => {
   }
 
   return (
-    <section className="testimonials-section">
-      <div className="absolute size-full flex flex-col items-center pt-[5vw]">
-        <h1 className="text-black first-title">What&apos;s</h1>
-        <h1 className="text-light-brown sec-title">Everyone</h1>
-        <h1 className="text-black third-title">Talking</h1>
-      </div>
+    <>
+      <section className="testimonials-section">
+        <div className="absolute size-full flex flex-col items-center pt-[5vw]">
+          <h1 className="text-black first-title">What&apos;s</h1>
+          <h1 className="text-light-brown sec-title">Everyone</h1>
+          <h1 className="text-black third-title">Talking</h1>
+        </div>
 
-      <div className="pin-box">
-        {cards.map((card, index) => (
-          <div
-            key={index}
-            className={`vd-card ${card.translation} ${card.rotation}`}
-            onMouseEnter={() => handlePlay(index)}
-            onMouseLeave={() => handlePause(index)}>
-            <video
-              ref={el => {
-                if (el) vdRef.current[index] = el;
-              }}
-              src={card.src}
-              playsInline
-              muted
-              loop
-              className="size-full object-cover"
-            />
-          </div>
-        ))}
-      </div>
-    </section>
+        <div className="pin-box">
+          {cards.map((card, index) => (
+            <div
+              key={index}
+              className={`vd-card ${card.translation} ${card.rotation} cursor-pointer`}
+              onMouseEnter={() => handlePlay(index)}
+              onMouseLeave={() => handlePause(index)}
+              onClick={() => setSelectedVideo(card.src)}>
+              <video
+                ref={el => {
+                  if (el) vdRef.current[index] = el;
+                }}
+                src={card.src}
+                playsInline
+                muted
+                loop
+                className="size-full object-cover"
+              />
+            </div>
+          ))}
+        </div>
+        <VideoPanel
+          isOpen={!!selectedVideo}
+          onClose={() => setSelectedVideo(null)}
+          videoSrc={selectedVideo || ''}
+        />
+      </section>
+    </>
   );
 };
 
