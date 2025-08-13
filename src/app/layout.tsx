@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     description: 'an awwward winning GSAP website remake by Mohannad a Front-end dev',
     images: [
       {
-        url: '/assets/images/og-image.png', 
+        url: '/assets/images/og-image.png',
         width: 1431,
         height: 738,
         alt: 'Spylt remake',
