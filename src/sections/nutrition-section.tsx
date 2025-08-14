@@ -54,13 +54,13 @@ const NutritionSection = () => {
         onComplete: cleanUpAria, // Clean up after animation
       },
     });
-    
+
     contentTl.from(titleSplit.chars, {
       yPercent: 100,
       stagger: 0.02,
       ease: 'power2.out',
     });
-    
+
     contentTl.from(paragraphSplit.lines, {
       yPercent: 300,
       rotate: 3,
@@ -96,14 +96,15 @@ const NutritionSection = () => {
         <div className="relative inline-block md:translate-y-20">
           <div className="general-title relative flex flex-col justify-center items-center gap-24">
             <div className="overflow-hidden place-self-start">
-              <h1 id="nutrition-heading" className="nutrition-title">It still does</h1>
+              <h1 id="nutrition-heading" className="nutrition-title">
+                It still does
+              </h1>
             </div>
             <div
               style={{
                 clipPath: 'polygon(0 0, 0 0, 0 100%, 0% 100%)',
               }}
-              className="nutrition-text-scroll place-self-start opacity-0"
-            >
+              className="nutrition-text-scroll place-self-start opacity-0">
               <div className="bg-yellow-brown pb-5 md:pt-0 pt-3 md:px-5 px-3">
                 <h2 className="text-milk-yellow">Body Good</h2>
               </div>
@@ -121,7 +122,9 @@ const NutritionSection = () => {
         </div>
 
         <div className="nutrition-box" role="region" aria-labelledby="nutrition-facts-title">
-          <h3 id="nutrition-facts-title" className="sr-only">Nutrition Facts</h3>
+          <h3 id="nutrition-facts-title" className="sr-only">
+            Nutrition Facts
+          </h3>
           <div className="list-wrapper">
             {lists.map((nutrient, index) => (
               <div key={index} className="relative flex-1 col-center overflow-hidden" role="group">

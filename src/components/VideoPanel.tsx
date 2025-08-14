@@ -173,9 +173,9 @@ const VideoPanel: React.FC<VideoPanelProps> = ({ isOpen, onClose, videoSrc, clas
 
         <div className="relative aspect-video">
           <video ref={videoRef} src={videoSrc} onClick={togglePlay} />
-          <button 
-            onClick={togglePlay} 
-            aria-label={isPlaying ? "Pause video" : "Play video"}
+          <button
+            onClick={togglePlay}
+            aria-label={isPlaying ? 'Pause video' : 'Play video'}
             className="absolute inset-0 flex items-center justify-center group">
             {!isPlaying && (
               <div className="w-20 h-20 flex items-center justify-center rounded-full bg-white/20 backdrop-blur-sm group-hover:bg-white/30 transition-all duration-300 group-hover:scale-110">

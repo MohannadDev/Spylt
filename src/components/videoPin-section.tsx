@@ -11,7 +11,6 @@ const VideoPinSection = () => {
   });
   const [selectedVideo, setSelectedVideo] = useState('');
 
-
   useGSAP(() => {
     if (!isMobiel) {
       const tl = gsap.timeline({
@@ -40,8 +39,8 @@ const VideoPinSection = () => {
 
         <div className="abs-center md:scale-100 scale-200">
           <img src="/assets/images/circle-text.svg" alt="" aria-hidden="true" className="spin-circle" />
-          <button 
-            className="play-btn" 
+          <button
+            className="play-btn"
             onClick={() => setSelectedVideo('/assets/videos/pin-video.mp4')}
             aria-label="Play video">
             <img src="/assets/images/play.svg" alt="" aria-hidden="true" className="size-[3vw] ml-[.5vw]" />

@@ -1,7 +1,7 @@
-"use client";
-import { useState, useEffect, useRef } from "react";
-import gsap from "gsap";
-import Loading from "@/app/loading";
+'use client';
+import { useState, useEffect, useRef } from 'react';
+import gsap from 'gsap';
+import Loading from '@/app/loading';
 
 export default function PageLoader({ children }: { children: React.ReactNode }) {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -12,18 +12,18 @@ export default function PageLoader({ children }: { children: React.ReactNode }) 
       gsap.to(loaderRef.current, {
         opacity: 0,
         duration: 0.4,
-        ease: "power2.out",
+        ease: 'power2.out',
         onComplete: () => setIsLoaded(true),
       });
     };
 
-    if (document.readyState === "complete") {
+    if (document.readyState === 'complete') {
       finishLoading();
       return;
     }
 
-    window.addEventListener("load", finishLoading);
-    return () => window.removeEventListener("load", finishLoading);
+    window.addEventListener('load', finishLoading);
+    return () => window.removeEventListener('load', finishLoading);
   }, []);
 
   if (isLoaded) return children;
@@ -32,11 +32,10 @@ export default function PageLoader({ children }: { children: React.ReactNode }) 
     <div
       ref={loaderRef}
       style={{
-        position: "fixed",
+        position: 'fixed',
         inset: 0,
         zIndex: 9999,
-      }}
-    >
+      }}>
       <Loading />
     </div>
   );

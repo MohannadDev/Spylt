@@ -67,23 +67,23 @@ const FlavorSlider = () => {
         {flavorlists.map(flavor => {
           return (
             <div key={flavor.name} className="flavor-container">
-              <img 
-                src={`/assets/images/${flavor.color}-bg.svg`} 
-                alt={`${flavor.name} background`} 
-                aria-hidden="true" 
-                className="absolute bottom-0" 
+              <img
+                src={`/assets/images/${flavor.color}-bg.svg`}
+                alt={`${flavor.name} background`}
+                aria-hidden="true"
+                className="absolute bottom-0"
               />
 
-              <img 
-                src={`/assets/images/${flavor.color}-drink.webp`} 
-                alt={`${flavor.name} drink`} 
-                className="drinks" 
+              <img
+                src={`/assets/images/${flavor.color}-drink.webp`}
+                alt={`${flavor.name} drink`}
+                className="drinks"
               />
 
-              <img 
-                src={`/assets/images/${flavor.color}-elements.webp`} 
-                alt={`${flavor.name} decorative elements`} 
-                className="elements" 
+              <img
+                src={`/assets/images/${flavor.color}-elements.webp`}
+                alt={`${flavor.name} decorative elements`}
+                className="elements"
               />
 
               <h1>{flavor.name}</h1>
