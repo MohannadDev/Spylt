@@ -158,26 +158,32 @@ const VideoPanel: React.FC<VideoPanelProps> = ({ isOpen, onClose, videoSrc, clas
         <button
           ref={closeButtonRef}
           onClick={handleClose}
+          aria-label="Close video"
           className="absolute top-4 right-4 z-10 w-10 h-10 flex items-center justify-center rounded-full bg-white/10 backdrop-blur-sm hover:bg-white/20 transition-all duration-200 hover:scale-110 group"
           disabled={isAnimating}>
           <svg
             className="w-5 h-5 text-white group-hover:rotate-90 transition-transform duration-200"
             fill="none"
             stroke="currentColor"
-            viewBox="0 0 24 24">
+            viewBox="0 0 24 24"
+            aria-hidden="true">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
           </svg>
         </button>
 
         <div className="relative aspect-video">
           <video ref={videoRef} src={videoSrc} onClick={togglePlay} />
-          <button onClick={togglePlay} className="absolute inset-0 flex items-center justify-center group">
+          <button 
+            onClick={togglePlay} 
+            aria-label={isPlaying ? "Pause video" : "Play video"}
+            className="absolute inset-0 flex items-center justify-center group">
             {!isPlaying && (
               <div className="w-20 h-20 flex items-center justify-center rounded-full bg-white/20 backdrop-blur-sm group-hover:bg-white/30 transition-all duration-300 group-hover:scale-110">
                 <svg
                   className="w-8 h-8 text-white ml-1"
                   fill="currentColor"
                   viewBox="0 0 20 20"
+                  aria-hidden="true"
                   style={{ marginLeft: 0 }}>
                   <path
                     fillRule="evenodd"

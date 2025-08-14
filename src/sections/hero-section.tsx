@@ -68,11 +68,16 @@ const HeroSection = () => {
         {isTablet ? (
           <>
             {isMobile && (
-              <img src="/assets/images/hero-bg.png" className="absolute bottom-40 size-full object-cover" />
+              <img
+                src="/assets/images/hero-bg.png"
+                alt="Hero background"
+                className="absolute bottom-40 size-full object-cover"
+              />
             )}
             <img
               src="/assets/images/hero-img.png"
-              className="absolute bottom-0 left-1/2 -translate-x-1/2 object-auto"
+              alt="Hero product image"
+              className="absolute bottom-[-10%] sm:bottom-[-15%] md:bottom-[-20%] left-1/2 -translate-x-1/2 object-auto"
             />
           </>
         ) : (
@@ -99,13 +104,13 @@ const HeroSection = () => {
           </div>
 
           <h2>
-            Live life to the fullest  with SPYLT: Shatter boredom and embrace your inner kid with every deliciously
+            Live life to the fullest with SPYLT: Shatter boredom and embrace your inner kid with every deliciously
             smooth chug.
           </h2>
 
-          <div className="cta-button">
+          <button className="cta-button" aria-label="Contact the developer">
             <p>Contact the dev</p>
-          </div>
+          </button>
         </div>
       </div>
     </section>

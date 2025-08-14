@@ -5,6 +5,7 @@ import GSAPProvider from '../components/GSAPProvider';
 import Loading from './loading';
 import { Suspense } from 'react';
 import { GoogleAnalytics } from '@next/third-parties/google';
+import PageLoader from '@/components/PageLoader';
 
 export const metadata: Metadata = {
   title: 'Spylt remake | GSAP Nextjs website',
@@ -52,11 +53,13 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
       <body>
         <div id="smooth-wrapper">
           <div id="smooth-content">
-            <Suspense fallback={<Loading />}>
-              <GSAPProvider />
+            {/* suspense wasn't working properly, the loading will show untill ALL assets should be loaded  */}
+            <GSAPProvider />
+
+            <PageLoader>
               <Navbar />
               <main>{children}</main>
-            </Suspense>
+            </PageLoader>
           </div>
         </div>
         <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || ''} />

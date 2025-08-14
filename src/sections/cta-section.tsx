@@ -2,6 +2,7 @@
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { SplitText } from 'gsap/all';
+import Link from 'next/link';
 import React from 'react';
 
 export default function CtaSection() {
@@ -39,9 +40,12 @@ export default function CtaSection() {
           </div>
           <p>Buy our drinks at your local store or get them delivered (to your door).</p>
         </div>
-        <div className="cta-button">
+        <Link
+          href="mailto:mohannad.eldardeery@gmail.com"
+          className="cta-button"
+          aria-label="Contact the developer">
           <p>Contact the dev</p>
-        </div>
+        </Link>
       </div>
     </section>
   );

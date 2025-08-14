@@ -9,13 +9,9 @@ const VideoPinSection = () => {
   const isMobiel = useMediaQuery({
     query: '(max-width: 768px)',
   });
-  // const [isVideoPanelOpen, setIsVideoPanelOpen] = useState(false);
   const [selectedVideo, setSelectedVideo] = useState('');
 
-  const handleOpenVideo = (videoSrc: string) => {
-    setSelectedVideo(videoSrc);
-    // setIsVideoPanelOpen(true);
-  };
+
   useGSAP(() => {
     if (!isMobiel) {
       const tl = gsap.timeline({
@@ -43,13 +39,15 @@ const VideoPinSection = () => {
         <video src="/assets/videos/pin-video.mp4" playsInline muted loop autoPlay />
 
         <div className="abs-center md:scale-100 scale-200">
-          <img src="/assets/images/circle-text.svg" alt="" className="spin-circle" />
-          <button className="play-btn" onClick={() => setSelectedVideo('/assets/videos/pin-video.mp4')}>
-            <img src="/assets/images/play.svg" alt="" className="size-[3vw] ml-[.5vw]" />
+          <img src="/assets/images/circle-text.svg" alt="" aria-hidden="true" className="spin-circle" />
+          <button 
+            className="play-btn" 
+            onClick={() => setSelectedVideo('/assets/videos/pin-video.mp4')}
+            aria-label="Play video">
+            <img src="/assets/images/play.svg" alt="" aria-hidden="true" className="size-[3vw] ml-[.5vw]" />
           </button>
         </div>
       </div>
-      {/* <VideoPanel isOpen={isVideoPanelOpen} onClose={() => setIsVideoPanelOpen(false)} videoSrc={selectedVideo} /> */}
       <VideoPanel isOpen={!!selectedVideo} onClose={() => setSelectedVideo('')} videoSrc={selectedVideo || ''} />
     </section>
   );

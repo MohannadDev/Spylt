@@ -26,15 +26,15 @@ const FooterSection = () => {
         )}
 
         <div className="flex-center gap-5 relative z-10 md:mt-20 mt-5">
-          <div className="social-btn">
-            <img src="/assets/images/yt.svg" alt="" />
-          </div>
-          <div className="social-btn">
-            <img src="/assets/images/insta.svg" alt="" />
-          </div>
-          <div className="social-btn">
-            <img src="/assets/images/tiktok.svg" alt="" />
-          </div>
+          <button className="social-btn" aria-label="YouTube">
+            <img src="/assets/images/yt.svg" alt="" aria-hidden="true" />
+          </button>
+          <button className="social-btn" aria-label="Instagram">
+            <img src="/assets/images/insta.svg" alt="" aria-hidden="true" />
+          </button>
+          <button className="social-btn" aria-label="TikTok">
+            <img src="/assets/images/tiktok.svg" alt="" aria-hidden="true" />
+          </button>
         </div>
 
         <div className="mt-40 md:px-10 px-5 flex gap-10 md:flex-row flex-col justify-between text-milk font-paragraph md:text-lg font-medium">
