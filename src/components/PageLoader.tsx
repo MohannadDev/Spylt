@@ -11,7 +11,7 @@ export default function PageLoader({ children }: { children: React.ReactNode }) 
     const finishLoading = () => {
       gsap.to(loaderRef.current, {
         opacity: 0,
-        duration: 0.4,
+        duration: 0.3,
         ease: 'power2.out',
         onComplete: () => setIsLoaded(true),
       });
