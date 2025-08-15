@@ -1,5 +1,7 @@
 # Spylt Website Remake
 
+![Spylt Website Screenshot](./spylt_screenShot.png)
+
 This is a remake of the award-winning Spylt website, built with Next.js and GSAP. The original design and assets are from the Spylt website.
 
 ## 🌐 Live Demo
@@ -33,14 +35,6 @@ Check out the live deployment at [mohannad-spylt.vercel.app](https://mohannad-sp
 ### Deployment
 
 - Vercel - Hosting Platform
-
-## 🎨 Features
-
-- Smooth animations using GSAP
-- Responsive design
-- Interactive UI elements
-- Video integration
-- Modern loading transitions
 
 ## 🚀 Getting Started
 
@@ -82,6 +76,14 @@ bun dev
 ```
 
 4. Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+## 🎨 Features
+
+- Smooth animations using GSAP
+- Responsive design
+- Interactive UI elements
+- Video integration
+- Modern loading transitions
 
 ## 📝 Credits
 
