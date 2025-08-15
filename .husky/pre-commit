@@ -1,4 +1,5 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
+npx prettier --check . || (echo 'Prettier Check Failed. Run npm run format and try commit again.' && exit 1)
 npm run format

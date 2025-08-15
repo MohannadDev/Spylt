@@ -36,6 +36,14 @@ Check out the live deployment at [mohannad-spylt.vercel.app](https://mohannad-sp
 
 - Vercel - Hosting Platform
 
+## 🎨 Features
+
+- Smooth animations using GSAP
+- Responsive design
+- Interactive UI elements
+- Video integration
+- Modern loading transitions
+
 ## 🚀 Getting Started
 
 ### Prerequisites
@@ -77,21 +85,28 @@ bun dev
 
 4. Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-## 🎨 Features
-
-- Smooth animations using GSAP
-- Responsive design
-- Interactive UI elements
-- Video integration
-- Modern loading transitions
-
 ## 📝 Credits
 
 Design and assets are from the original Spylt website. This is a remake for demonstration and learning purposes.
 
 ## 👨‍💻 Developer
 
-Mohannad Eldardeery - [GitHub](https://github.com/MohannadDev)
+<div align="center">
+
+### Mohannad Eldardeery
+
+**Full Stack Developer | React Specialist | Animation Expert**
+
+<p>
+  <a href="https://github.com/MohannadDev" target="_blank"><img src="https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github" alt="GitHub"/></a>
+  <a href="https://www.linkedin.com/in/MohannadEldardeery/" target="_blank"><img src="https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin" alt="LinkedIn"/></a>
+  <a href="https://www.upwork.com/freelancers/~01880ecbdb24cd17c4" target="_blank"><img src="https://img.shields.io/badge/upwork-%23108A00.svg?style=for-the-badge&logo=upwork" alt="Upwork"/></a>
+  <a href="mailto:mohannad.eldardeery@gmail.com" target="_blank"><img src="https://img.shields.io/badge/gmail-%23D14836.svg?style=for-the-badge&logo=gmail" alt="Gmail"/></a>
+</p>
+
+_Passionate about creating smooth, interactive web experiences with modern technologies_
+
+</div>
 
 ## 📄 License
 

@@ -8,7 +8,7 @@
     "start": "next start",
     "prepare": "husky install",
     "format": "prettier --write .",
-    "lint": "eslint ."
+    "format:check": "prettier --check ."
   },
   "dependencies": {
     "@gsap/react": "^2.1.2",
