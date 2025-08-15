@@ -16,6 +16,7 @@ Check out the live deployment at [mohannad-spylt.vercel.app](https://mohannad-sp
 ## 🔧 Tech Stack
 
 ### Frontend
+
 - React.js - UI Library
 - Next.js - React Framework
 - TypeScript - Programming Language
@@ -23,12 +24,14 @@ Check out the live deployment at [mohannad-spylt.vercel.app](https://mohannad-sp
 - Tailwind CSS - Utility-first CSS Framework
 
 ### Development Tools
+
 - ESLint - Code Linting
 - Prettier - Code Formatting
 - Husky - Git Hooks
 - PostCSS - CSS Processing
 
 ### Deployment
+
 - Vercel - Hosting Platform
 
 ## 🎨 Features
@@ -49,11 +52,13 @@ Check out the live deployment at [mohannad-spylt.vercel.app](https://mohannad-sp
 ### Installation
 
 1. Clone the repository
+
 ```bash
 git clone https://github.com/MohannadDev/Spylt.git
 ```
 
 2. Install dependencies
+
 ```bash
 npm install
 # or
@@ -65,6 +70,7 @@ bun install
 ```
 
 3. Run the development server
+
 ```bash
 npm run dev
 # or
@@ -76,7 +82,6 @@ bun dev
 ```
 
 4. Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
 
 ## 📝 Credits
 
